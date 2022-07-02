@@ -10,6 +10,7 @@ export const formatEmailData = (emailData = {}) => ({
   footerContent: emailData.footerContent || '',
   content: emailData.content || '',
   preview: emailData.preview,
+  subject: emailData.subject,
   // org settings
   hasMarketing: emailData.hasMarketing || false,
   name: emailData.name,
