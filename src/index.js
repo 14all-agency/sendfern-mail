@@ -11,6 +11,7 @@ export const formatEmailData = (emailData = {}) => ({
   content: emailData.content || '',
   preview: emailData.preview,
   subject: emailData.subject,
+  scheduledAt: emailData.scheduledAt,
   // org settings
   hasMarketing: emailData.hasMarketing || false,
   name: emailData.name,
