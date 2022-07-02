@@ -1,7 +1,7 @@
 {
   "name": "@sendfern/mail",
   "version": "1.0.0",
-  "description": "Quickly send templated email notifications from your NodeJS applications",
+  "description": "Quickly generate or send templated email notifications from your NodeJS applications",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
