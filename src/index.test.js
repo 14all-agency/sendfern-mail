@@ -12,8 +12,9 @@ describe('formatEmailData', () => {
       to: undefined,
       footerContent: '',
       content: '',
+      preview: undefined,
       subject: undefined,
-      scheduledAt: false,
+      scheduledAt: undefined,
       // org settings
       hasMarketing: false,
       name: undefined,

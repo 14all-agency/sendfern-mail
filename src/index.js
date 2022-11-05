@@ -28,6 +28,8 @@ export const formatEmailData = (emailData = {}) => ({
   region: emailData.region,
   zip: emailData.zip,
   country: emailData.country,
+  unsubscribeLink: emailData.unsubscribeLink,
+  showReferrer: emailData.showReferrer || false,
 });
 
 // Our exposed hook for generating the email using the given styling
@@ -363,7 +365,7 @@ const footer = (emailData = {}) => `
   ` : ''}
   ${emailData?.hasMarketing ? `
     <p class="f-fallback sub align-${theme(emailData, 'emailFooterAlignment')}">
-      No longer want to receive these emails? <a href="#">Unsubscribe</a>.                          
+      No longer want to receive these emails? <a href="${emailData?.unsubscribeLink}">Unsubscribe</a>.                          
     </p>
     <p class="f-fallback sub align-${theme(emailData, 'emailFooterAlignment')}">
       &copy; ${new Date().getFullYear()} ${emailData?.name}. All rights reserved. ${emailData.streetAddress1 || ''}${emailData.streetAddress2 ? `, ${emailData.streetAddress2}` : ''}, ${emailData.city || ''}, ${emailData.region || ''} ${emailData.zip || ''}, ${emailData.country || ''}.
