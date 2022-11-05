@@ -31,6 +31,8 @@ describe('formatEmailData', () => {
       region: undefined,
       zip: undefined,
       country: undefined,
+      unsubscribeLink: undefined,
+      showReferrer: false,
     };
 
     expect(actual).toEqual(expected);

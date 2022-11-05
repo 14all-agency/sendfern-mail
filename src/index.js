@@ -375,6 +375,11 @@ const footer = (emailData = {}) => `
       &copy; ${new Date().getFullYear()} ${emailData?.name}. All rights reserved.
     </p>
   `}
+  ${emailData?.showReferrer ? `
+    <p class="f-fallback sub align-${theme(emailData, 'emailFooterAlignment')}">
+      Powered by <a href="https://sendfern.com">Sendfern</a>.
+    </p>
+  ` : ''}
 `;
 
 // Generates the content of our emails
