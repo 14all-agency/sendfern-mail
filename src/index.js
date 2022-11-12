@@ -208,6 +208,11 @@ const style = (emailData = {}) => `
         color: ${theme(emailData, 'footerTextColor')};
       }
 
+      .email-footer .referrer {
+        color: ${theme(emailData, 'footerTextColor')};
+        text-decoration: none;
+      }
+
       ${theme(emailData, 'bodyAction')}
 
       ${theme(emailData, 'bodyDivider')}
@@ -377,7 +382,7 @@ const footer = (emailData = {}) => `
   `}
   ${emailData?.showReferrer ? `
     <p class="f-fallback sub align-${theme(emailData, 'emailFooterAlignment')}">
-      Powered by <a href="https://sendfern.com">Sendfern</a>.
+      Powered by <a class="referrer" href="https://sendfern.com">Sendfern</a>.
     </p>
   ` : ''}
 `;
