@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "color": "^4.2.3",
-    "html-to-text": "^8.2.0"
+    "html-to-text": "^8.2.0",
+    "node-fetch": "^3.3.0"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix"
