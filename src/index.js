@@ -1,6 +1,19 @@
 import Color from 'color';
 import { convert } from 'html-to-text';
 
+export const send = async (apiSecret, emailData = {}) => {
+  const emailRequest = formatEmailData(emailData);
+  const emailResponse = await fetch('https://api.sendfern.com/v1/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-sendfern-token': apiSecret,
+    },
+    body: JSON.stringify(emailRequest),
+  }).then((r) => r.json()).catch((err) => console.log(err));
+  return emailResponse;
+};
+
 // Normalizes the email data before sending to emailHtml
 export const formatEmailData = (emailData = {}) => ({
   // system settings
