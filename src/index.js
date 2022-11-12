@@ -1,19 +1,25 @@
 import Color from 'color';
 import { convert } from 'html-to-text';
-import fetch from 'node-fetch';
 
-export const send = async (apiSecret, emailData = {}) => {
-  const emailRequest = formatEmailData(emailData);
-  const emailResponse = await fetch('https://api.sendfern.com/v1/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-sendfern-token': apiSecret,
-    },
-    body: JSON.stringify(emailRequest),
-  }).then((r) => r.json()).catch((err) => console.log(err));
-  return emailResponse;
-};
+// export async function send(apiSecret, emailData = {}) {
+//   const emailRequest = formatEmailData(emailData);
+
+//   const emailResponse = await new Promise((resolve) => {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('POST', 'https://api.sendfern.com/v1/send', true);
+//     xhr.setRequestHeader('x-sendfern-token', apiSecret);
+//     xhr.setRequestHeader('Content-Type', 'application/json');
+//     xhr.onload = function (e) {
+//       resolve(xhr.response);
+//     };
+//     xhr.onerror = function () {
+//       resolve(undefined);
+//       console.error('** An error occurred during the XMLHttpRequest');
+//     };
+//     xhr.send(JSON.stringify(emailRequest));
+//   });
+//   return emailResponse;
+// }
 
 // Normalizes the email data before sending to emailHtml
 export const formatEmailData = (emailData = {}) => ({
