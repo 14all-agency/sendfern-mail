@@ -1,5 +1,6 @@
 import Color from 'color';
 import { convert } from 'html-to-text';
+import fetch from 'node-fetch';
 
 export const send = async (apiSecret, emailData = {}) => {
   const emailRequest = formatEmailData(emailData);
